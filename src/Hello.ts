@@ -1,5 +1,5 @@
 function hello(): string {
-  return "Hello world";
+	return 'Hello world';
 }
 
 export default hello;
