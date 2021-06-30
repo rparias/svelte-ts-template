@@ -12,7 +12,8 @@
 		"test:ui": "jest --config jest.config.ui.ts",
 		"test:ui:watch": "npm run test:ui -- --watch",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^17.0.0",
@@ -24,7 +25,9 @@
 		"eslint": "^7.29.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.0",
+		"husky": "^6.0.0",
 		"jest": "^27.0.6",
+		"lint-staged": "^11.0.0",
 		"prettier": "^2.3.2",
 		"prettier-plugin-svelte": "^2.3.1",
 		"rollup": "^2.3.4",
