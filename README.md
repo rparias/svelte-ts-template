@@ -1,17 +1,8 @@
-_Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
+# svelte typescript app template
 
----
+This is a project template for [Svelte](https://svelte.dev) apps with Typescript.
 
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+This template includes jest, testing library, prettier, eslint, lint-stage and husky.
 
 _Note that you will need to have [Node.js](https://nodejs.org) installed._
 
@@ -20,7 +11,7 @@ _Note that you will need to have [Node.js](https://nodejs.org) installed._
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd your-folder
 npm install
 ```
 
@@ -56,48 +47,33 @@ If you're building a single-page app (SPA) with multiple routes, sirv needs to b
 "start": "sirv public --single"
 ```
 
-## Using TypeScript
+## Unit Tests and UI Tests
 
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
+### Unit Tests
+
+To run your unit tests:
 
 ```bash
-node scripts/setupTypeScript.js
+npm run test
 ```
 
-Or remove the script via:
+### UI Tests
+
+To run your unit tests:
 
 ```bash
-rm scripts/setupTypeScript.js
+npm run test:ui
 ```
 
 ## Deploying to the web
 
-### With [Vercel](https://vercel.com)
+### With [Netlify](https://www.netlify.com/)
 
-Install `vercel` if you haven't already:
+You need to create two secrets on your repository:
 
-```bash
-npm install -g vercel
-```
+- NETLIFY_AUTH_TOKEN (you can create a new one on settings user/applications)
+- NETLIFY_SITE_ID (unique identifier your for site)
 
-Then, from within your project folder:
+Then, a github workflow is going to deploy your app when you commit to master.
 
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+In adition, there is an aditional workflow file called `build-and-push-docker-image.yml` that allows you to build a docker image and push it to Dockerhub.
